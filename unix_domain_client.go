@@ -29,7 +29,7 @@ func main() {
 	}
 
 	dir := os.Args[1]
-	path := dir + "/sock"
+	path := dir + "/socket"
 
 	fmt.Println("$SNAP is", dir)
 	fmt.Println("socket path is ", path)

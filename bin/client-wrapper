@@ -1,0 +1,8 @@
+#!/bin/sh
+
+# set shell options:
+#  -e 	    Exit immediately if a command exits w/non-zero status
+#  -x	    print commands and their args as executed
+set -ex
+
+$SNAP/bin/unix-domain-client $SNAP/sockdir/

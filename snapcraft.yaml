@@ -1,0 +1,32 @@
+name: unix-domain-client
+version: '0.1'
+summary: Simple Unix domain client example written in Go.
+description: |
+  Simple Unix domain client example written in Go.  The
+  primary usage is to test sharing a socket between snaps
+  from the same developer/publisher via the content interface.
+
+grade: devel
+confinement: strict
+
+plugs:
+   content:
+     content: socket-directory
+     target: $SNAP/sockdir
+
+apps:
+  unix-domain-client:
+    command: bin/client-wrapper
+    plugs: [network]
+
+parts:
+  unix-domain-client-common:
+    plugin: copy
+    files:
+      bin/client-wrapper: bin/client-wrapper
+      sockdir/empty-file: sockdir/
+
+  unix-domain-client:
+    source: .
+    plugin: go
+    go-importpath: github.com/tonyespy/unix-domain-client

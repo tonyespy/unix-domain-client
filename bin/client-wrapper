@@ -5,4 +5,4 @@
 #  -x	    print commands and their args as executed
 set -ex
 
-$SNAP/bin/unix-domain-client $SNAP/sockdir/
+$SNAP/bin/unix-domain-client $SNAP_DATA

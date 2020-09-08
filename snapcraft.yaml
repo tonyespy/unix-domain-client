@@ -12,7 +12,7 @@ confinement: strict
 plugs:
    content:
      content: socket-directory
-     target: $SNAP_DATA
+     target: $SNAP_DATA/sockets
 
 apps:
   unix-domain-client:
